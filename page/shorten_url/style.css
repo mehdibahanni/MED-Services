@@ -1,0 +1,237 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    min-height: 90vh;
+    background: #20B2AA;
+}
+.wrapper{
+    background-color: #fff;
+    width: 800px;
+    padding: 20px;
+    border-radius: 5px;
+}
+form {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+form .icon{
+    position: absolute;
+    width: 45px;
+    pointer-events: none;
+    text-align: center;
+    color: #c4c4c4;
+    font-size: 20px;
+}
+form input{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: 1px solid #ddd;
+    padding: 0 125px 0 50px;
+    border-radius: 5px;
+    caret-color: #20B2AA;
+    font-size: 15px;
+    transition: all 0.1s ease;
+}
+form input:valid{
+    border-color: #20B2AA;
+}
+form input::placeholder{
+    color: #c4c4c4;
+}
+form input:focus::placeholder{
+    color: #d9d9d9;
+}
+form button{
+    position: absolute;
+    right: 6px;
+    padding: 10px 15px;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    background: #20B2AA;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+}
+form input:valid ~ button{
+    opacity: 1;
+    pointer-events: auto;
+}
+form input:valid ~ .icon{
+    color: #20B2AA;
+}
+.wrapper a{
+    color: #000;
+}
+.wrapper .count{
+    margin: 20px 0;
+    display: flex;
+    padding-right: 5px;
+    align-items: center;
+    justify-content: space-between;
+}
+.count span{
+    font-size: 17px;
+}
+.count span span{
+    font-weight: 700;
+}
+.count a:hover{
+    color: #20B2AA;
+}
+.wrapper .urls-area{
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    max-height: 400px;
+    overflow-y: scroll;
+}
+.wrapper .urls-area::-webkit-scrollbar{
+    width: 0;
+}
+.urls-area :is(.title, .data){
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.urls-area li{
+    list-style: none;
+    width: 100%;
+    border-right: 1px solid #ddd;
+}
+.urls-area li:last-child(){
+    border-right: 0px;
+}
+.urls-area .title li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 10px;
+    word-break: break-all;
+}
+.urls-area .data li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 10px;
+    word-break: break-all;
+    cursor: pointer;
+}
+.urls-area .data li:hover{
+    color: #20B2AA;
+}
+.urls-area .data li:nth-child(odd){
+    background: #f2f2f2;
+}
+.urls-area .title li{
+    background: #f2f2f2;
+}
+.urls-area li:nth-child(1){
+    max-width: 20%;
+}
+.urls-area li:nth-child(2){
+    max-width: 55%;
+}
+.urls-area li:nth-child(3){
+    max-width: 11%;
+}
+.urls-area li:nth-child(4){
+    max-width: 11%;
+}
+.urls-area .data li:last-child a{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.urls-area .data li a:hover{
+    color: #20B2AA;
+    text-decoration: underline;
+}
+.urls-area .data li a:last-child{
+    text-decoration: none;
+}
+.blur-effect{
+    position: absolute;
+    backdrop-filter: blur(2px);
+    background: rgba(0, 0, 0, 0.01);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: none;
+}
+.popup-box{
+    position: absolute;
+    background: #fff;
+    padding: 25px;
+    border-radius: 5px;
+    max-width: 480px;
+    width: 100%;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+}
+.popup-box .info-box{
+    color: #0f5753;
+    background-color: #bef4f1;
+    border: 1px solid #7de8e3;
+    padding: 10px;
+    font-size: 17px;
+    text-align: center;
+}
+.info-box.error{
+    color: #721c24;
+    background: #f8d7da;
+    border-color: #f5c6cb;
+}
+.popup-box form{
+    position: relative;
+    height: 130px;
+}
+.popup-box p{
+    margin-top: 15px;
+    font-size: 18px;
+}
+.popup-box form .copy{
+    position: absolute;
+    right: 10px;
+    z-index: 1;
+    top: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+.popup-box form input{
+    height: 45px;
+    border: 1px solid #ccc;
+    padding: 0 35px 0 15px;
+    margin-top: 3px;
+    margin-top: 3px;
+}
+.popup-box form button{
+    /* position: static; */
+    width: 100%;
+    right: 0;
+    bottom: 0;
+}
+.popup-box{
+    opacity: 1;
+    visibility: visible;
+}
